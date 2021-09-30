@@ -1,8 +1,5 @@
 print("%7.2f" %71544818181.1819)
 
-
-
-
 order = int(input("Enter order: "))
 if order >= 3000 and order <=5000:
     dis = 120
@@ -28,8 +25,6 @@ if des.upper() == "BK":
     elif w >= 6 and w <= 10:
         shipping =200
     else:shipping = 0
-
-
 elif des.upper() == "TH":
     w = float(input("Enter wei :"))
     print("\n%s" % ("-" * 60))

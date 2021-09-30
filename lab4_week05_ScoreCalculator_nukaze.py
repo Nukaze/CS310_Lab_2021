@@ -21,12 +21,8 @@ for score in sctray:
 for score in sctray:
         if score <= 100 and score >= 50:
                 scpass_list.append(score)
-#score_condition
-#remove out range number
-
-#collect pass std
-#pass score list
-
+#score_condition #remove out range number
+#collect pass std #pass score list
 avg_sclist = sum(sclist) / len(sclist)
 avg_scpass = sum(scpass_list) / len(scpass_list)
 
