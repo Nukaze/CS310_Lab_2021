@@ -1,6 +1,5 @@
 # CS310_127G_Anupun_Khumthong_1640705560
-# Week_04_Lab03 #kaze-
-# ผมได้ใส่ function และ try except ทุก input เลยครับลองใช้งานดูว่าทำงานได้ครบถ้วนไหม
+# Week_04_Lab03 #nukaze-
 # function
 def desti_display():
     # destination
