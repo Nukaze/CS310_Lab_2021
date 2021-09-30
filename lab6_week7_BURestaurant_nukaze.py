@@ -3,7 +3,6 @@
 #uiprint
 uidot = "."*64;uibures = "BU Restaurant".center(64);uiheadmenu = "Menu"
 uimenuid = "Menu ID".center(16);uimenuprice = "Price".center(16)
-
 #listvar
 menuidlst = ["F01","F02","F03","F04","D01","D02"]
 foodlst = ["F01","F02","F03","F04"]
