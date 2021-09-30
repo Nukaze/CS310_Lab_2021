@@ -25,7 +25,6 @@ def main_uiheader():
 
 #inputLoop
 def main_whilerun():
-    print(qtyidlst)
     wrun, c = 1, 1
     wquit = ""
     while wquit != "Y":
@@ -39,10 +38,8 @@ def main_whilerun():
                 print("#",c)
                 wid = input("Enter Menu ID: ").upper()
             qty = int(input("Enter Quantity: "))
-            print(qtyidlst)
             widprice = menuidlst.index(wid)                 #wid index price in lst
             qtyidlst[widprice] = qtyidlst[widprice] + qty   #append qty in pointer id
-            print(qtyidlst)
             wquit = input("Quit? (Y/N): ").upper()
             while not wquit in yesnolst:                    #Catch Y and N only
                 wquit = input("Quit? (Y/N): ").upper()
@@ -54,8 +51,6 @@ def main_whilerun():
                 inidnamelst.clear();inquanlst.clear()
                 main_uiheader()
         c += 1
-        print(widprice)
-        print(qtyidlst)
     bumember = input("BU Member Card (Y/N): ").upper()
     while not yesnolst:
         bumember = input("BU Member Card (Y/N): ").upper()
