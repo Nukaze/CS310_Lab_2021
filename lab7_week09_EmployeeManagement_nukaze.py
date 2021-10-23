@@ -63,15 +63,17 @@ def emp_data():
     print("*" * 64)
     print("* * * SHOW DATA EMPLOYEE * * *".center(64))
     print("*" * 64)
+    print("#".center(4) + "Name".ljust(12) + "Surname".ljust(12)
+          + "Username".center(11) + "Password".center(11) + "ID Card".center(14))
     if uidlst:
+        print("=" * 64)
         for run in range(len(uidlst)):
             print("=" * 64)
-            print("#".center(4)+"Name".ljust(12)+"Surname".ljust(12)
-                  +"Username".center(11)+"Password".center(11)+"ID Card".center(14))
+
             cnt = str(run+1)
             print(cnt.center(4)+str(namelst[run]).ljust(12)+str(snamelst[run]).ljust(12)
                   +str(userlst[run]).center(11)+str(keylst[run]).center(11)+str(uidlst[run]).center(14))
-            print("=" * 64)
+        print("=" * 64)
     else:
         print("." * 64)
         print(" " * 64)
