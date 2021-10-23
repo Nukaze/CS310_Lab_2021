@@ -1,7 +1,7 @@
 # CS310 127G Week7 Lab6 Anupun Khumthong 1640705560
 #Employee information management Program  #nukaze-
-uidlst, allnamelst, userlst, keylst = [], [], [], []
-uid, name, fname, keyword = "","","",""
+uidlst, namelst, snamelst, userlst, keylst = [], [], [], [], []
+uid, reqname, fname, name, sname, keyword = "","","","","",""
 def emp_main():
     print(("> " * 10 + "Welcome Employee System" + " <" * 10).center(64))
     print("[1] Register Employee")
@@ -25,21 +25,26 @@ def emp_main():
 
 def emp_regis():
     print("+"*64)
-    print("+ + + REGISTER EMLOYEE + + +".center(64))
+    print("+ + + REGISTER EMPLOYEE + + +".center(64))
     print("+"*64)
-    fname = input("Enter Name Surname: ")
+    reqname = input("Enter Name Surname: ")
     uid = (input("Enter ID card [13 digits]: "))
     while len(uid) != 13:
         print("Invalid ID card ")
         uid = (input("Enter ID card [13 digits]: "))
         print(len(uid))
     uidlst.append(uid)
-    allnamelst.append(fname)
-    #fname =
-    #username = nam
-    #ukey =
-    #userlst.append()
-    #keylst.append()
+    fname = reqname.split()
+    name = fname[0];namelst.append(name)
+    sname = fname[1];snamelst.append(sname)
+    username = name+"."+sname[0]                      #genuser
+    userlst.append(username)
+    ukey = (reqname[1].lower())+(reqname[3].upper())+(reqname[2].upper())+str(len(reqname))+(reqname[4].lower())
+    #genkey
+    keylst.append(ukey)
+    print(namelst)
+    print(snamelst)
+    print(ukey)
     print(uid)
     print(uidlst)
     print("Register Complete.")
@@ -48,7 +53,7 @@ def emp_regis():
 
 def emp_del():
     print("-" * 64)
-    print("- - - DELETE EMLOYEE - - -".center(64))
+    print("- - - DELETE EMPLOYEE - - -".center(64))
     print("-" * 64)
 
     emp_main()
@@ -56,12 +61,17 @@ def emp_del():
 
 def emp_data():
     print("*" * 64)
-    print("* * * SHOW DATA EMLOYEE * * *".center(64))
+    print("* * * SHOW DATA EMPLOYEE * * *".center(64))
     print("*" * 64)
     if uidlst:
         for run in range(len(uidlst)):
-            print("No.".center())
-            print([run] + allnamelst[run] + uidlst[run])
+            print("=" * 64)
+            print("#".center(4)+"Name".ljust(12)+"Surname".ljust(12)
+                  +"Username".center(11)+"Password".center(11)+"ID Card".center(14))
+            cnt = str(run+1)
+            print(cnt.center(4)+str(namelst[run]).ljust(12)+str(snamelst[run]).ljust(12)
+                  +str(userlst[run]).center(11)+str(keylst[run]).center(11)+str(uidlst[run]).center(14))
+            print("=" * 64)
     else:
         print("." * 64)
         print(" " * 64)
@@ -69,9 +79,6 @@ def emp_data():
         print("Please Register Data before Checking.".center(64))
         print(" " * 64)
         print("." * 64)
-
-
-
     emp_main()
 
 
