@@ -1,4 +1,4 @@
-# CS310 127G Week7 Lab6 Anupun Khumthong 1640705560
+# CS310 127G Week09 Lab7 Anupun Khumthong 1640705560
 #Employee information management Program  #nukaze-
 uidlst, namelst, snamelst, userlst, keylst = [], [], [], [], []
 uid, reqname, fname, name, sname, keyword = "","","","","",""
