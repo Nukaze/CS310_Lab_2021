@@ -32,29 +32,30 @@ def emp_regis():
     print("+"*64)
     reqname = input("Enter Name Surname: ")
     fname = reqname.split()
-    if len(fname) > 1:                                    #catch
+    if len(fname) > 1:                                      #catch name sname error
         name = fname[0];namelst.append(name)
         sname = fname[1];snamelst.append(sname)
-        username = name+"."+sname[0]                      #genuser
+        username = name+"."+sname[0]                        #genuser
         userlst.append(username)
         ukey = (reqname[1].lower())+(reqname[3].upper())+(reqname[2].upper())+str(len(reqname))+(reqname[4].lower())
         #genkey
         keylst.append(ukey)
-        print(namelst)
-        print(snamelst)
-        print(ukey)
     else:
         print("Required name and surname!! Please try again.")
         emp_regis()
-    uid = (input("Enter ID card [13 digits]: "))
-    while len(uid) != 13:
-        print("Invalid ID card ")
-        uid = (input("Enter ID card [13 digits]: "))
+    try:                                                    #catch numeric only
+        uid = (input("Enter ID card [13 digits]: "))        # 1111111111111
+        while len(uid) != 13:                               #catch length id error
+            print("Invalid ID card must have 13 digits")
+            uid = (input("Enter ID card [13 digits]: "))
+        int(uid)                                            #convert str to int
+    except ValueError:                                      #catch triggered loop
+        print("Invalid ID card must have 13 digits and number only")
+        emp_regis()
     uidlst.append(uid)
-    print(uid)
-    print(uidlst)
-    print("Register Complete.")
-
+    print("~"*64)
+    print("> Register Complete.")
+    print("~" * 64)
     emp_main()
 
 
@@ -62,25 +63,20 @@ def emp_del():
     print("-" * 64)
     print("- - - DELETE EMPLOYEE - - -".center(64))
     print("-" * 64)
-    print(uid)
-    print(namelst)
-    print(snamelst)
-    print(userlst)
-    print(keylst)
     delname = input("Enter name employee to delete : ")
     if delname in namelst:
         delindex = namelst.index(delname)
-        print("Del index = ",delindex)
         uidlst.pop(delindex)
         namelst.pop(delindex)
         snamelst.pop(delindex)
         userlst.pop(delindex)
         keylst.pop(delindex)
-        print(delname+"has been deleted.")
+        print("-" * 64)
+        print(delname+" has been deleted.")
+        print("-" * 64)
     else:
         print("Invalid name!! Please try again.")
         emp_del()
-
     emp_main()
 
 
