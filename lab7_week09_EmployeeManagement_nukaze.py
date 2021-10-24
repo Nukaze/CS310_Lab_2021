@@ -3,7 +3,6 @@
 uidlst, namelst, snamelst, userlst, keylst = [], [], [], [], []
 uid, reqname, fname, name, sname, keyword = "","","","","",""
 
-
 def emp_main():
     print(("> " * 10 + "Welcome Employee System" + " <" * 10).center(64))
     print("[1] Register Employee")
