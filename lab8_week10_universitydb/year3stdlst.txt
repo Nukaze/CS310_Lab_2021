@@ -1,0 +1,4 @@
+1620700019 surasit meemark 3.45 3 18 M
+1620700059 suparinee meesukdee 3.45 3 18 F
+1620700079 jesdapon suksuksuk 3.45 3 18 M
+Total Student = 3
