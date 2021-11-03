@@ -1,24 +1,30 @@
 # CS310 127G Week09 Lab7 Anupun Khumthong 1640705560
 # university database Program  #nukaze-
 import time
+import os
 
 def loadprogress():
-    input("> Press any key to analysis raw data to University database ")
+    input("> Press any key to analysis raw data to University database  ")
     print("> [ Analysing Data.. ]")
     t = 5
     print("> [",end="")
     for i in range(t):
         time.sleep(0.25)
-        loadprogress = "■"*i*5
+        loadprogress = "■"*i*4
         print("%s"%loadprogress,end="")
     print("]")
-    time.sleep(1)
+    time.sleep(0.5)
     print("> [ 100% Database Analysis Successfully. ]")
+
+def show_allstudents():
+    with open('stdlst.txt','r') as dbstd:
+        line = dbstd.read().splitlines()
+        for std in line:
+            print(std)
 
 def show_femaletable():
     with open('femalestdlst.txt','r') as dbfemale:
         line = dbfemale.read().splitlines()
-        print("\n\nline female = ",line,end="\n")
         for std in line:
             print(std)
         print("Total Female Students = {}\n".format(len(line)))
@@ -71,7 +77,53 @@ def show_yetctable():
             print(std)
         print("Total Others year Students = {}\n".format(len(line)))
 
+def show_menu():
+    uiclear()
+    print("Please select menu below")
+    print("[X] End Program\n[A] All Table\n[M] Male Table \n[F] Female Table\n[1] Year 1\n[2] Year 2\n[3] Year 3 \n[4] Year 4\n[0] Other Year \n")
+    m = input("Enter your menu > ")
+    menu = m.upper()
+    uiclear()
+    print("- You Choose [%s] Menu -"%menu)
+    if menu == "A":
+        print("- All students table -")
+        show_maletable()
+        show_femaletable()
 
+        navigate()
+    elif menu == "M":
+        print("- All Male students table -")
+        show_maletable()
+        navigate()
+    elif menu == "F":
+        print("- All Female students table -")
+        show_femaletable()
+        navigate()
+    elif menu == "1":
+        pass
+    elif menu == "2":
+        pass
+    elif menu == "3":
+        pass
+    elif menu == "4":
+        pass
+    elif menu == "0":
+        pass
+    elif menu == "X":
+        quit("Exiting..")
+    else:
+        print("Invalid menu! Please try again.")
+        time.sleep(2.5)
+        show_menu()
+
+def navigate():
+    nav = input("Press any key to back to the menu or Press [x] to exit the program\n> ")
+    if nav.upper() == "X":
+        quit("Exiting..")
+    else:
+        show_menu()
+
+uiclear = lambda: os.system('cls')
 loadprogress()
 with open('stdlst.txt','r') as dbstd:
     qtyfemale, qtymale = 0, 0
@@ -109,6 +161,7 @@ with open('stdlst.txt','r') as dbstd:
         if int(data[4]) > 4 or int(data[4]) < 1:
             dbyetc.write(std + '\n')
             qtyyetc += 1
+    #writeppl
     dbfemale.write("Total female students = {}".format(qtyfemale))
     dbmale.write("Total male students = {}".format(qtymale))
     dby1.write("Total Student = {}".format(qtyy1))
@@ -116,7 +169,8 @@ with open('stdlst.txt','r') as dbstd:
     dby3.write("Total Student = {}".format(qtyy3))
     dby4.write("Total Student = {}".format(qtyy4))
     dbyetc.write("Total Student = {}".format(qtyyetc))
-
+    #close dbfile
     dbmale.close();dbfemale.close()
     dby1.close();dby2.close();dby3.close();dby4.close();dbyetc.close()
-
+    input("Press any key to go next. ")
+show_menu()
