@@ -1,4 +1,4 @@
 1640700007 sirintorn cheyasak 2.45 1 18 F
 1640700039 thanet manmakmak 3.45 1 18 M
 1640700089 mongkol deesudsud 3.45 1 18 M
-Total Student = 3
+Total 1st year Students = 3

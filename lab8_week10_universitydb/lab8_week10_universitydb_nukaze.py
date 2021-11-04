@@ -3,112 +3,112 @@
 import time
 import os
 
-def loadprogress():
-    input("> Press any key to analysis raw data to University database  ")
-    print("> [ Analysing Data.. ]")
-    t = 5
-    print("> [",end="")
-    for i in range(t):
-        time.sleep(0.25)
-        loadprogress = "■"*i*4
-        print("%s"%loadprogress,end="")
-    print("]")
-    time.sleep(0.5)
-    print("> [ 100% Database Analysis Successfully. ]")
-
-def show_allstudents():
+def show_originstudents():
+    print("- All original students table -".center(40))
     with open('stdlst.txt','r') as dbstd:
         line = dbstd.read().splitlines()
         for std in line:
             print(std)
+        print("Total original Students = {}".format(len(line)))
+    print("")
 
 def show_femaletable():
+    print("- All Female students table -".center(40))
     with open('femalestdlst.txt','r') as dbfemale:
         line = dbfemale.read().splitlines()
         for std in line:
             print(std)
-        print("Total Female Students = {}\n".format(len(line)))
+        ###print("Total Female Students = {}\n".format(len(line))) work
+    print("")
 
 def show_maletable():
+    print("- All Male students table -".center(40))
     with open('malestdlst.txt', 'r') as dbmale:
         line = dbmale.read().splitlines()
-        print("line male = ",line,end="")
         for std in line:
             print(std)
-        print("Total Male Students = {}\n".format(len(line)))
+        ###print("Total Male Students = {}\n".format(len(line))) work
+    print("")
 
 def show_y1table():
+    print("- All 1st year students table -".center(40))
     with open('year1stdlst.txt', 'r') as dby1:
         line = dby1.read().splitlines()
-        print("line male = ",line,end="")
         for std in line:
             print(std)
-        print("Total Year 1st Students = {}\n".format(len(line)))
+    print("")
 
 def show_y2table():
+    print("- All 2nd year students table -".center(40))
     with open('year2stdlst.txt', 'r') as dby2:
         line = dby2.read().splitlines()
-        print("line 2nd = ",line,end="")
         for std in line:
             print(std)
-        print("Total Year 2nd Students = {}\n".format(len(line)))
+    print("")
 
 def show_y3table():
+    print("- All 3rd year students table -".center(40))
     with open('year3stdlst.txt', 'r') as dby3:
         line = dby3.read().splitlines()
-        print("line 3rd = ",line,end="")
         for std in line:
             print(std)
-        print("Total Year 3rd Students = {}\n".format(len(line)))
+    print("")
 
 def show_y4table():
+    print("- All 4th year students table -".center(40))
     with open('year4stdlst.txt', 'r') as dby4:
         line = dby4.read().splitlines()
-        print("line 4th = ",line,end="")
         for std in line:
             print(std)
-        print("Total Year 4th Students = {}\n".format(len(line)))
+    print("")
 
 def show_yetctable():
+    print("- All other year students table -".center(40))
     with open('yearetcstdlst.txt', 'r') as dbyetc:
         line = dbyetc.read().splitlines()
-        print("line etc = ",line,end="")
         for std in line:
             print(std)
-        print("Total Others year Students = {}\n".format(len(line)))
+    print("")
 
 def show_menu():
     uiclear()
-    print("Please select menu below")
+    print("[ Bangkok University database ]\n - Please select menu below")
     print("[X] End Program\n[A] All Table\n[M] Male Table \n[F] Female Table\n[1] Year 1\n[2] Year 2\n[3] Year 3 \n[4] Year 4\n[0] Other Year \n")
     m = input("Enter your menu > ")
     menu = m.upper()
     uiclear()
     print("- You Choose [%s] Menu -"%menu)
     if menu == "A":
-        print("- All students table -")
+        show_originstudents()
         show_maletable()
         show_femaletable()
-
+        show_y1table()
+        show_y2table()
+        show_y3table()
+        show_y4table()
+        show_yetctable()
         navigate()
     elif menu == "M":
-        print("- All Male students table -")
         show_maletable()
         navigate()
     elif menu == "F":
-        print("- All Female students table -")
         show_femaletable()
         navigate()
     elif menu == "1":
-        pass
+        show_y1table()
+        navigate()
     elif menu == "2":
-        pass
+        show_y2table()
+        navigate()
     elif menu == "3":
-        pass
+        show_y3table()
+        navigate()
     elif menu == "4":
-        pass
+        show_y4table()
+        navigate()
     elif menu == "0":
-        pass
+        show_yetctable()
+        navigate()
     elif menu == "X":
         quit("Exiting..")
     else:
@@ -119,12 +119,12 @@ def show_menu():
 def navigate():
     nav = input("Press any key to back to the menu or Press [x] to exit the program\n> ")
     if nav.upper() == "X":
+        uiclear()
         quit("Exiting..")
     else:
         show_menu()
 
 uiclear = lambda: os.system('cls')
-loadprogress()
 with open('stdlst.txt','r') as dbstd:
     qtyfemale, qtymale = 0, 0
     qtyy1, qtyy2, qtyy3, qtyy4, qtyyetc = 0, 0, 0, 0, 0
@@ -162,15 +162,14 @@ with open('stdlst.txt','r') as dbstd:
             dbyetc.write(std + '\n')
             qtyyetc += 1
     #writeppl
-    dbfemale.write("Total female students = {}".format(qtyfemale))
-    dbmale.write("Total male students = {}".format(qtymale))
-    dby1.write("Total Student = {}".format(qtyy1))
-    dby2.write("Total Student = {}".format(qtyy2))
-    dby3.write("Total Student = {}".format(qtyy3))
-    dby4.write("Total Student = {}".format(qtyy4))
-    dbyetc.write("Total Student = {}".format(qtyyetc))
+    dbfemale.write("Total Female students = {}".format(qtyfemale))
+    dbmale.write("Total Male students = {}".format(qtymale))
+    dby1.write("Total 1st year Students = {}".format(qtyy1))
+    dby2.write("Total 2nd year Students = {}".format(qtyy2))
+    dby3.write("Total 3rd year Students = {}".format(qtyy3))
+    dby4.write("Total 4th year Students = {}".format(qtyy4))
+    dbyetc.write("Total Other year Students = {}".format(qtyyetc))
     #close dbfile
     dbmale.close();dbfemale.close()
     dby1.close();dby2.close();dby3.close();dby4.close();dbyetc.close()
-    input("Press any key to go next. ")
 show_menu()
