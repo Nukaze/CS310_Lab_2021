@@ -4,6 +4,7 @@ def getdata ():
     with open("profile.txt","r") as file:
         while True :
             data = file.readline().split()
+            print(data)
             if data == []:
                 break
             id.append(data[0])
