@@ -1,4 +1,4 @@
-# CS310 127G Week09 Lab7 Anupun Khumthong 1640705560
+# CS310 127G Week10-11 Lab8 Anupun Khumthong 1640705560
 # university database Program  #nukaze-
 import time
 import os
