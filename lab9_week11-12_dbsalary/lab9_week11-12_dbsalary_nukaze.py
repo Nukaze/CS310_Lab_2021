@@ -2,4 +2,8 @@
 # university database Program  #nukaze-
 wid,name,sname,tier,salary,sale,income = [],[],[],[],[],[],[]
 
-def
+def getdata():
+    pass
+
+def writedatafile():
+    pass
