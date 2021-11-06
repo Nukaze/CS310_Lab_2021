@@ -77,6 +77,7 @@ def navigate():
     if nav.upper() == "X":
         quit("exiting..")
     else: uicls();show_menuincome()
+
 getdata()
 writedatafile()
 show_menuincome()
