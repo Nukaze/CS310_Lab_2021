@@ -1,0 +1,19 @@
+               [ Show income employee full-time ]               
+NAME SURNAME SALARY SALE INCOME
+ ==== ====== ====== ==== ======
+  1001 Pannee Sukdee 15000.00 450000.00 60000.00               [ Show income employee full-time ]               
+NAME SURNAME SALARY SALE INCOME
+ ==== ====== ====== ==== ======
+  1002  Suwit Pongnonta 18000.00 560000.00 74000.00               [ Show income employee full-time ]               
+NAME SURNAME SALARY SALE INCOME
+ ==== ====== ====== ==== ======
+  1003 Ratchata Meemonkon 20000.00 600000.00 80000.00               [ Show income employee full-time ]               
+NAME SURNAME SALARY SALE INCOME
+ ==== ====== ====== ==== ======
+  1004 Peerada Ketpong 16000.00 350000.00 51000.00               [ Show income employee full-time ]               
+NAME SURNAME SALARY SALE INCOME
+ ==== ====== ====== ==== ======
+  1005 Taweep Rujirote 23000.00 540000.00 77000.00               [ Show income employee full-time ]               
+NAME SURNAME SALARY SALE INCOME
+ ==== ====== ====== ==== ======
+  1006  Kunya Wongpisasin 19000.00 490000.00 68000.00
