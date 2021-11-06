@@ -137,7 +137,7 @@ with open('stdlst.txt','r') as dbstd:
     line = dbstd.read().splitlines()
     for std in line:
         data = std.split()
-        std.split()
+        #std.split()
         #gender
         if data[-1].upper() == "F":
             dbfemale.write(std + '\n')
