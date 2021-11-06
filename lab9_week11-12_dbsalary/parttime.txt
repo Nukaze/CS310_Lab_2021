@@ -1,18 +1,11 @@
-               [ Show income employee part-time ]               
-NAME SURNAME SALARY SALE INCOME
- ==== ====== ====== ==== ======
-               [ Show income employee part-time ]               
-NAME SURNAME SALARY SALE INCOME
- ==== ====== ====== ==== ======
-               [ Show income employee part-time ]               
-NAME SURNAME SALARY SALE INCOME
- ==== ====== ====== ==== ======
-               [ Show income employee part-time ]               
-NAME SURNAME SALARY SALE INCOME
- ==== ====== ====== ==== ======
-               [ Show income employee part-time ]               
-NAME SURNAME SALARY SALE INCOME
- ==== ====== ====== ==== ======
-               [ Show income employee part-time ]               
-NAME SURNAME SALARY SALE INCOME
- ==== ====== ====== ==== ======
+================================================================================
+                      [ Show income employee part-time ]                      
+
+ ID      NAME       SURNAME               SALARY         SALE       INCOME
+================================================================================
+1001     Pannee     Sukdee              15000.00    450000.00     60000.00
+1002     Suwit      Pongnonta           18000.00    560000.00     74000.00
+1004     Peerada    Ketpong             16000.00    350000.00     51000.00
+1006     Kunya      Wongpisasin         19000.00    490000.00     68000.00
+================================================================================
+# Total Part-time networth =    253000.00
